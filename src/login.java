@@ -20,7 +20,7 @@ public class login{
 	@DataProvider(name="loginErrorAttempt")
 	public Object[][] loginError(){
 		return new Object[][]{
-				{"19900000001","111112","111111"},
+				{"19900000002","111112","111111"},
 		};
 	}
 	
