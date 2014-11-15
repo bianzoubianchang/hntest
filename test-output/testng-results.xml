@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="35220" started-at="2014-11-15T07:52:54Z" finished-at="2014-11-15T07:53:29Z">
+    <groups>
+    </groups>
+    <test name="LoginPage" duration-ms="35220" started-at="2014-11-15T07:52:54Z" finished-at="2014-11-15T07:53:29Z">
+      <class name="login">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:login@5262a98a]" name="setup" is-config="true" duration-ms="6398" started-at="2014-11-15T15:52:54Z" finished-at="2014-11-15T15:53:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://10.211.4.107/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="userlogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:login@5262a98a]" name="userlogin" duration-ms="28447" started-at="2014-11-15T15:53:00Z" data-provider="loginErrorAttempt" finished-at="2014-11-15T15:53:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[19900000001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[111112]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[111111]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userlogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:login@5262a98a]" name="tearDown" is-config="true" duration-ms="358" started-at="2014-11-15T15:53:29Z" finished-at="2014-11-15T15:53:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- login -->
+    </test> <!-- LoginPage -->
+  </suite> <!-- Default suite -->
+</testng-results>

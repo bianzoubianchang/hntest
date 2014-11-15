@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <parameter name="username" value="19900000002"/>
+  <parameter name="host_test" value="http://10.211.4.107/"/>
+  <parameter name="name" value="开心二"/>
+  <parameter name="host_produce" value="http://10.211.4.107/"/>
+  <parameter name="password" value="111111"/>
+  <test name="LoginPage(failed)">
+    <parameter name="username" value="19900000002"/>
+    <parameter name="name" value="开心二"/>
+    <parameter name="password" value="111111"/>
+    <classes>
+      <class name="login">
+        <methods>
+          <include name="userlogin" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- login -->
+    </classes>
+  </test> <!-- LoginPage(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

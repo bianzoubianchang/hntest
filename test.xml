@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite">
+
+
+<parameter name="host_produce" value="http://10.211.4.107/" />
+<parameter name="host_test" value="http://10.211.4.107/" />
+
+<!--
+  <test verbose="2" name="CMB_Transaction">
+		<parameter name="username" value="19999991562" />
+		<parameter name="password" value="111111" />
+		<parameter name="name" value="王五" />
+	<classes>
+		<class name="transactionCheck" />
+			<methods>
+		      	<include name="userlogin" />
+		      	<include name="getvalue" />
+				<include name="purchase" />
+				<include name="trans_out_dev" />
+	     	 </methods>
+	</classes>
+  </test> 
+  -->
+
+
+
+
+  <test verbose="2" name="LoginPage">
+		<parameter name="username" value="19900000002" />
+		<parameter name="password" value="111111" />
+		<parameter name="name" value="开心二" />
+	<classes>
+		<class name="login" />
+			<methods>
+		      	<include name="userlogin" />
+
+	     	 </methods>
+	</classes>
+  </test> 
+
+
+
+
+  
+<!-- 注册页面
+<test verbose="2" name="register">
+	<classes>
+		<class name="register" />
+	</classes>
+</test>
+  -->
+
+<!-- 验证登录和购买的测试
+  <test verbose="2" name="CMB_Transaction">
+		<parameter name="username" value="19999999993" />
+		<parameter name="password" value="111111" />
+		<parameter name="name" value="王五" />
+	<classes>
+		<class name="transactionCheck" />
+			<methods>
+		      	<include name="userlogin" />
+		      	<include name="getvalue" />
+				<include name="purchase" />
+				<include name="trans_out" />
+	     	 </methods>
+	</classes>
+  </test> 
+  
+  
+    <test verbose="2" name="CCB_Transaction">
+		<parameter name="username" value="13717504303" />
+		<parameter name="password" value="hn000000" />
+		<parameter name="name" value="陈锐宾" />
+    <classes>
+      <class name="transactionCheck" />
+	      <methods>
+		      	<include name="userlogin" />
+		      	<include name="getvalue" />
+				<include name="purchase" />
+		      	<include name="trans_out_dev" />
+	      </methods>
+    </classes>
+  </test> 
+
+  
+  -->
+  
+  
+</suite> <!-- Default suite -->

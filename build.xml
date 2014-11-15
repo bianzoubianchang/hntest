@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+<project name="CZB" default="run" basedir=".">
+	<property name="src" value="src" />
+	<property name="classes" value="classes" />
+	<property name="libs" value="libs" />
+	<property name="JARFile" value="czb.jar" />
+	
+	<target name="init">
+		<mkdir dir="${classes}" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${classes}"  classpathref="classref"  includeantruntime="off" />
+	</target>
+	
+    <path id="classref">
+        <fileset dir="${libs}" includes="*.jar"/>
+        <fileset dir="${libs}" includes="*.zip"/>
+        <pathelement location="${libs}"/>
+    </path>
+	
+	
+	<target name="jar" depends="compile">
+		<jar jarfile="${JARFile}" basedir="${classes}" />
+	</target>	
+	
+	<target name="run" depends="compile">
+		<java classname="inter" classpath="${classes}"  classpathref="classref"  />
+	</target>	
+	
+	<target name="clean">
+		<delete dir="${classes}" />
+		<delete file="${JARFile}" />
+	</target>
+
+</project>
+-->
+
+
+<project name="CZB" default="clean" basedir=".">
+	<property name="src" value="src" />
+	<property name="classes" value="classes" />
+	<property name="libs" value="libs" />
+	<property name="JARFile" value="czb.jar" />
+	<property name="testngfile" value="test.xml" />
+	<property name="result" value="test-output" />
+
+	<taskdef resource="testngtasks" classpath="${libs}/testng-6.8.5.jar"/>	
+	
+	<target name="init">
+		<mkdir dir="${classes}" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${classes}"  classpathref="classref"  includeantruntime="off" />
+	</target>
+	
+    <path id="classref">
+        <fileset dir="${libs}" includes="*.jar"/>
+        <fileset dir="${libs}" includes="*.zip"/>
+        <pathelement location="${classes}"/>
+    </path>
+	
+	
+	<target name="jar" depends="compile">
+		<jar jarfile="${JARFile}" basedir="${classes}" />
+	</target>	
+	
+    <target name="run" depends="compile">
+        <testng outputdir="${result}" classpathref="classref">
+            <xmlfileset dir="." includes="${testngfile}"/>
+        </testng>
+    </target>
+	
+	<target name="clean">
+		<delete dir="${classes}" />
+		<delete file="${JARFile}" />
+	</target>
+
+</project>
