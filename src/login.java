@@ -56,11 +56,11 @@ public class login{
 	
 	@Test(invocationCount=1,dataProvider="loginErrorAttempt")
 
-	public void userlogin(String username_para,String password,String true_password) throws Exception{
+	public void userlogin(String username_para,String wrong_password,String right_password) throws Exception{
 		
 		System.out.println("****验证错误登录的次数限制****");
 		System.out.println("测试数据说明如下：");
-		System.out.println("用户名："+username_para+"，错误密码："+password+"，正确密码："+true_password);
+		System.out.println("用户名："+username_para+"，错误密码："+wrong_password+"，正确密码："+right_password);
 
 		String usernameTooltip=driver.findElement(By.id("txt_username")).getAttribute("placeholder");
 		String passwordTooltip=driver.findElement(By.id("txt_pwd")).getAttribute("placeholder");
@@ -69,7 +69,7 @@ public class login{
 		Assert.assertEquals("6-20位密码", passwordTooltip);
 		
 		int n=0;		
-		for(int i=1;i<=5;i++)	{
+		for(int i=1;i<=6;i++)	{
 			driver.findElement(By.id("txt_username")).click();
 			driver.findElement(By.id("txt_username")).clear();
 			driver.findElement(By.id("txt_username")).sendKeys(username_para);
@@ -78,7 +78,7 @@ public class login{
 			
 			if(i==5 && n==0){
 			//第5次登录成功后，恢复尝试登录次数	
-			driver.findElement(By.id("txt_pwd")).sendKeys(true_password);
+			driver.findElement(By.id("txt_pwd")).sendKeys(right_password);
 			Thread.sleep(5000);	
 			driver.findElement(By.id("greenSubmit")).click();
 			driver.findElement(By.linkText("退出")).click();	
@@ -93,8 +93,13 @@ public class login{
 			i=0;
 			continue;
 			}
+			//
+			else if(i!=6) {
+				driver.findElement(By.id("txt_pwd")).sendKeys(wrong_password);
+				driver.findElement(By.id("greenSubmit")).click();
+			}			
 			else{
-				driver.findElement(By.id("txt_pwd")).sendKeys(password);
+				driver.findElement(By.id("txt_pwd")).sendKeys(right_password);
 				driver.findElement(By.id("greenSubmit")).click();
 			}
 			
@@ -103,7 +108,13 @@ public class login{
 			Thread.sleep(2000);	
 			String tooltips=driver.findElement(By.xpath("//html/body/div[3]/div[2]/div[1]/div[2]/div")).getText();
 			
-			System.out.println("第"+i+"次错误登录的提示");
+			if(i!=6){
+				System.out.println("第"+i+"次错误登录的提示");
+			}
+			else{
+				System.out.println("第"+i+"次使用正确密码在冻结后的提示");
+			}
+			
 			System.out.println(tooltips);
 			System.out.println("-----------------------");
 		}
