@@ -7,6 +7,12 @@
  * 1.允许错误登录5次，超过2次错误登录后提示剩余的错误登录次数
  * 2.错误登录达5次后，冻结账户
  * 3.正确登录后，恢复错误登录的次数
+ * 
+ * 执行前提条件：
+ * 测试账号的错误登录次数为0，即login_limit=0
+ * 
+ * 基本执行：
+ * 错误登录4次，然后成功登录1次，再连续错误登录5次。
  */
 
 import java.util.concurrent.TimeUnit;
@@ -78,7 +84,7 @@ public class login{
 			driver.findElement(By.linkText("退出")).click();	
 			
 			System.out.println("-----------------------");
-			System.out.println("同一账户成功登录后，应还原5次错误登录机会：");
+			System.out.println("第"+i+"次使用正确密码登录成功。"+"成功登录后，应还原5次错误登录机会：");
 			System.out.println("-----------------------");
 			System.out.println("-----------------------");
 			
