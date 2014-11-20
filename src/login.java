@@ -93,7 +93,7 @@ public class login{
 			i=0;
 			continue;
 			}
-			//
+			//第6次，在冻结后使用正确的密码登录
 			else if(i!=6) {
 				driver.findElement(By.id("txt_pwd")).sendKeys(wrong_password);
 				driver.findElement(By.id("greenSubmit")).click();
