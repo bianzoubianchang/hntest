@@ -84,7 +84,7 @@ public class login{
 			driver.findElement(By.linkText("退出")).click();	
 			
 			System.out.println("-----------------------");
-			System.out.println("第"+i+"次使用正确密码登录成功。"+"成功登录后，应还原5次错误登录机会：");
+			System.out.println("第"+i+"次使用正确密码登录成功。"+"成功登录后，应还原5次错误登录机会。");
 			System.out.println("-----------------------");
 			System.out.println("-----------------------");
 			
