@@ -25,7 +25,7 @@
 
 
 
-
+<!--
   <test verbose="2" name="loginTest">
 		<parameter name="username" value="19900000002" />
 		<parameter name="password" value="111111" />
@@ -37,7 +37,7 @@
 	     	 </methods>
 	</classes>
   </test> 
-
+  -->
 
   <test verbose="2" name="changePasswordTest">
 	<classes>
