@@ -34,7 +34,7 @@ public class changePassword {
 	@DataProvider(name="loginInfo")
 	public Object[][] loginInfo(){
 		return new Object[][]{
-				{"19900000001","111111","222222","开心一"},
+				{"18800000001","111111","222222","开心二"},
 		};
 	}
 
