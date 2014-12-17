@@ -10,7 +10,7 @@
 <!--
 测试登录及错误登录次数登录次数验证
 -->
-<test name="Test_Purchase">
+<test name="Test_Login">
 	<parameter name="username" value="18800000001" />
 	<parameter name="password" value="111111" />
 	<parameter name="name" value="王一" />
@@ -28,7 +28,7 @@
 <!--
 测试修改密码
 -->
-<test name="Test_Purchase">
+<test name="Test_changePassword">
 	<parameter name="username" value="18800000001" />
 	<parameter name="password" value="111111" />
 	<parameter name="name" value="王一" />
@@ -49,9 +49,9 @@
 -->
 
 <test name="Test_Purchase">
-	<parameter name="username" value="18800000002" />
+	<parameter name="username" value="18800000001" />
 	<parameter name="password" value="111111" />
-	<parameter name="name" value="王二" />
+	<parameter name="name" value="王一" />
 	
 	<classes>
 		<class name="test_purchase">
