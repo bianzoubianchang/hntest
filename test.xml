@@ -1,101 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Default suite">
+<suite name="Default suite" parallel="tests" thread-count="1" >
 
 
 <parameter name="host_produce" value="http://10.211.4.107/" />
 <parameter name="host_test" value="http://10.211.4.107/" />
 
+
 <!--
-  <test verbose="2" name="CMB_Transaction">
-		<parameter name="username" value="19999991562" />
-		<parameter name="password" value="111111" />
-		<parameter name="name" value="王五" />
+测试登录及错误登录次数登录次数验证
+-->
+<test name="Test_Purchase">
+	<parameter name="username" value="18800000001" />
+	<parameter name="password" value="111111" />
+	<parameter name="name" value="王一" />
+	
 	<classes>
-		<class name="transactionCheck" />
+		<class name="login">
 			<methods>
-		      	<include name="userlogin" />
-		      	<include name="getvalue" />
-				<include name="purchase" />
-				<include name="trans_out_dev" />
-	     	 </methods>
-	</classes>
-  </test> 
-  -->
-
-
-
-
-  <test verbose="2" name="loginTest">
-		<parameter name="username" value="18800000002" />
-		<parameter name="password" value="111111" />
-		<parameter name="name" value="王二" />
-	<classes>
-		<class name="changePassword" />
-			<methods>
-		      	<include name="changepwd" />
-	     	 </methods>
-	</classes>
-  </test> 
-
-
-  <test verbose="2" name="changePasswordTest">
-	<classes>
-		<class name="login" />
-			<methods>
-		      	<include name="userlogin" />
-	     	 </methods>
-	</classes>
-  </test> 
-
-
-
-
-
-
-  
-<!-- 注册页面
-<test verbose="2" name="register">
-	<classes>
-		<class name="register" />
+				<include name="userlogin" />
+			</methods>
+		</class>
 	</classes>
 </test>
-  -->
 
-<!-- 验证登录和购买的测试
-  <test verbose="2" name="CMB_Transaction">
-		<parameter name="username" value="19999999993" />
-		<parameter name="password" value="111111" />
-		<parameter name="name" value="王五" />
+
+<!--
+测试修改密码
+-->
+<test name="Test_Purchase">
+	<parameter name="username" value="18800000001" />
+	<parameter name="password" value="111111" />
+	<parameter name="name" value="王一" />
+	
 	<classes>
-		<class name="transactionCheck" />
+		<class name="changePassword">
 			<methods>
-		      	<include name="userlogin" />
-		      	<include name="getvalue" />
-				<include name="purchase" />
-				<include name="trans_out" />
-	     	 </methods>
+				<include name="changepwd" />
+			</methods>
+		</class>
 	</classes>
-  </test> 
-  
-  
-    <test verbose="2" name="CCB_Transaction">
-		<parameter name="username" value="13717504303" />
-		<parameter name="password" value="hn000000" />
-		<parameter name="name" value="陈锐宾" />
-    <classes>
-      <class name="transactionCheck" />
-	      <methods>
-		      	<include name="userlogin" />
-		      	<include name="getvalue" />
-				<include name="purchase" />
-		      	<include name="trans_out_dev" />
-	      </methods>
-    </classes>
-  </test> 
+</test>
 
-  
-  -->
-  
+
+
+<!--
+测试多次购买
+-->
+
+<test name="Test_Purchase">
+	<parameter name="username" value="18800000002" />
+	<parameter name="password" value="111111" />
+	<parameter name="name" value="王二" />
+	
+	<classes>
+		<class name="test_purchase">
+			<methods>
+				<include name="userlogin" />
+				<include name="purchase" />
+			</methods>
+		</class>
+	</classes>
+</test>
+
+
   
 </suite> <!-- Default suite -->
