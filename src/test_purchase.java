@@ -67,7 +67,7 @@ public class test_purchase{
 	@DataProvider(name="transin")
 	public Object[][] inMoney(){
 		return new Object[][]{
-				{"2000000"},
+				{"200"},
 
 		};
 	}	
